@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yt3-TV-gcI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="9qs-U0-IRd">
+            <objects>
+                <viewController storyboardIdentifier="Search View Controller" id="Yt3-TV-gcI" customClass="SearchViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Ig-B1-s5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="2ka-QE-Chk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yE7-ef-eXl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Giphy" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-TV-p6Q">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yt3-TV-gcI" id="Mqf-bz-ffF"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Img-8G-9UO">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EMq-Iq-WIW">
+                                    <size key="itemSize" width="110" height="110"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GIF Cell" id="6cK-iq-jA5" customClass="GIFCollectionViewCell" customModule="MessagesExtension" customModuleProvider="target">
+                                        <frame key="frameInset" minX="10" minY="10" width="110" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kJ-bo-EjX" customClass="MSStickerView">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5kJ-bo-EjX" secondAttribute="trailing" id="3g1-vF-Tqa"/>
+                                            <constraint firstItem="5kJ-bo-EjX" firstAttribute="top" secondItem="6cK-iq-jA5" secondAttribute="top" id="ZTO-Js-3PY"/>
+                                            <constraint firstItem="5kJ-bo-EjX" firstAttribute="leading" secondItem="6cK-iq-jA5" secondAttribute="leading" id="wwn-NT-6QF"/>
+                                            <constraint firstAttribute="bottom" secondItem="5kJ-bo-EjX" secondAttribute="bottom" id="xhD-EV-vbK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="stickerView" destination="5kJ-bo-EjX" id="9PN-hx-9my"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yt3-TV-gcI" id="yZf-co-5MS"/>
+                                    <outlet property="delegate" destination="Yt3-TV-gcI" id="90c-8S-sBg"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Img-8G-9UO" secondAttribute="trailing" id="Avi-Bz-yew"/>
+                            <constraint firstAttribute="trailing" secondItem="PUq-TV-p6Q" secondAttribute="trailing" id="DJF-DL-NPK"/>
+                            <constraint firstItem="Img-8G-9UO" firstAttribute="leading" secondItem="yE7-ef-eXl" secondAttribute="leading" id="L7V-ki-7nr"/>
+                            <constraint firstItem="PUq-TV-p6Q" firstAttribute="top" secondItem="4Ig-B1-s5h" secondAttribute="bottom" id="aHs-i0-XAR"/>
+                            <constraint firstItem="PUq-TV-p6Q" firstAttribute="leading" secondItem="yE7-ef-eXl" secondAttribute="leading" id="gCV-uO-bxQ"/>
+                            <constraint firstItem="2ka-QE-Chk" firstAttribute="top" secondItem="Img-8G-9UO" secondAttribute="bottom" id="jR2-qX-AE8"/>
+                            <constraint firstItem="Img-8G-9UO" firstAttribute="top" secondItem="PUq-TV-p6Q" secondAttribute="bottom" id="ztl-a1-Kwd"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Img-8G-9UO" id="jVc-9E-Rsk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcL-jj-D8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="101"/>
+        </scene>
+    </scenes>
+</document>

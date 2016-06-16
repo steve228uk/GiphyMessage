@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		287550491D12E13F00EBCB9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287550481D12E13F00EBCB9F /* Assets.xcassets */; };
+		287550501D12E13F00EBCB9F /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2875504F1D12E13F00EBCB9F /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		287550551D12E13F00EBCB9F /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287550541D12E13F00EBCB9F /* Messages.framework */; };
+		2875505B1D12E13F00EBCB9F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287550591D12E13F00EBCB9F /* MainInterface.storyboard */; };
+		2875505D1D12E13F00EBCB9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2875505C1D12E13F00EBCB9F /* Assets.xcassets */; };
+		287550691D12E51600EBCB9F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287550681D12E51600EBCB9F /* SearchViewController.swift */; };
+		287E71F81D12EA4B00E604F2 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E71F71D12EA4B00E604F2 /* GIF.swift */; };
+		287E71FA1D12EA7700E604F2 /* GiphyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E71F91D12EA7700E604F2 /* GiphyImage.swift */; };
+		287E71FC1D12EA9400E604F2 /* Giphy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E71FB1D12EA9400E604F2 /* Giphy.swift */; };
+		287E72021D12F87E00E604F2 /* GIFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E72011D12F87E00E604F2 /* GIFCollectionViewCell.swift */; };
+		287E72041D12FB4400E604F2 /* GIFCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E72031D12FB4400E604F2 /* GIFCache.swift */; };
+		28B46FB31D1305C4006E06D3 /* sticker_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B46FB21D1305C4006E06D3 /* sticker_placeholder.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		287550511D12E13F00EBCB9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2875503F1D12E13F00EBCB9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2875504E1D12E13F00EBCB9F;
+			remoteInfo = MessagesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		287550641D12E13F00EBCB9F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				287550501D12E13F00EBCB9F /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		287550451D12E13F00EBCB9F /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		287550481D12E13F00EBCB9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2875504A1D12E13F00EBCB9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2875504F1D12E13F00EBCB9F /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		287550541D12E13F00EBCB9F /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		2875505A1D12E13F00EBCB9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2875505C1D12E13F00EBCB9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2875505E1D12E13F00EBCB9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		287550681D12E51600EBCB9F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		287E71F71D12EA4B00E604F2 /* GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GIF.swift; path = Models/GIF.swift; sourceTree = "<group>"; };
+		287E71F91D12EA7700E604F2 /* GiphyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyImage.swift; path = Models/GiphyImage.swift; sourceTree = "<group>"; };
+		287E71FB1D12EA9400E604F2 /* Giphy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Giphy.swift; sourceTree = "<group>"; };
+		287E72011D12F87E00E604F2 /* GIFCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFCollectionViewCell.swift; sourceTree = "<group>"; };
+		287E72031D12FB4400E604F2 /* GIFCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFCache.swift; sourceTree = "<group>"; };
+		28B46FB21D1305C4006E06D3 /* sticker_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker_placeholder.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2875504C1D12E13F00EBCB9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287550551D12E13F00EBCB9F /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2875503E1D12E13F00EBCB9F = {
+			isa = PBXGroup;
+			children = (
+				287550471D12E13F00EBCB9F /* Giphy */,
+				287550561D12E13F00EBCB9F /* MessagesExtension */,
+				287550531D12E13F00EBCB9F /* Frameworks */,
+				287550461D12E13F00EBCB9F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		287550461D12E13F00EBCB9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				287550451D12E13F00EBCB9F /* Giphy.app */,
+				2875504F1D12E13F00EBCB9F /* MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		287550471D12E13F00EBCB9F /* Giphy */ = {
+			isa = PBXGroup;
+			children = (
+				287550481D12E13F00EBCB9F /* Assets.xcassets */,
+				2875504A1D12E13F00EBCB9F /* Info.plist */,
+			);
+			path = Giphy;
+			sourceTree = "<group>";
+		};
+		287550531D12E13F00EBCB9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				287550541D12E13F00EBCB9F /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		287550561D12E13F00EBCB9F /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				287E71F61D12EA3800E604F2 /* Giphy Search */,
+				287550591D12E13F00EBCB9F /* MainInterface.storyboard */,
+				2875505C1D12E13F00EBCB9F /* Assets.xcassets */,
+				2875505E1D12E13F00EBCB9F /* Info.plist */,
+				28B46FB21D1305C4006E06D3 /* sticker_placeholder.png */,
+				287550681D12E51600EBCB9F /* SearchViewController.swift */,
+				287E72011D12F87E00E604F2 /* GIFCollectionViewCell.swift */,
+			);
+			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		287E71F61D12EA3800E604F2 /* Giphy Search */ = {
+			isa = PBXGroup;
+			children = (
+				287E71F71D12EA4B00E604F2 /* GIF.swift */,
+				287E71F91D12EA7700E604F2 /* GiphyImage.swift */,
+				287E71FB1D12EA9400E604F2 /* Giphy.swift */,
+				287E72031D12FB4400E604F2 /* GIFCache.swift */,
+			);
+			name = "Giphy Search";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		287550441D12E13F00EBCB9F /* Giphy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 287550651D12E13F00EBCB9F /* Build configuration list for PBXNativeTarget "Giphy" */;
+			buildPhases = (
+				287550431D12E13F00EBCB9F /* Resources */,
+				287550641D12E13F00EBCB9F /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				287550521D12E13F00EBCB9F /* PBXTargetDependency */,
+			);
+			name = Giphy;
+			productName = Giphy;
+			productReference = 287550451D12E13F00EBCB9F /* Giphy.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		2875504E1D12E13F00EBCB9F /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 287550611D12E13F00EBCB9F /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				2875504B1D12E13F00EBCB9F /* Sources */,
+				2875504C1D12E13F00EBCB9F /* Frameworks */,
+				2875504D1D12E13F00EBCB9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 2875504F1D12E13F00EBCB9F /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2875503F1D12E13F00EBCB9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Cocoon Development Ltd";
+				TargetAttributes = {
+					287550441D12E13F00EBCB9F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B598AEF9ZM;
+						DevelopmentTeamName = "Cocoon Development Ltd";
+						ProvisioningStyle = Automatic;
+					};
+					2875504E1D12E13F00EBCB9F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = B598AEF9ZM;
+						DevelopmentTeamName = "Cocoon Development Ltd";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 287550421D12E13F00EBCB9F /* Build configuration list for PBXProject "Giphy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2875503E1D12E13F00EBCB9F;
+			productRefGroup = 287550461D12E13F00EBCB9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				287550441D12E13F00EBCB9F /* Giphy */,
+				2875504E1D12E13F00EBCB9F /* MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		287550431D12E13F00EBCB9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287550491D12E13F00EBCB9F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2875504D1D12E13F00EBCB9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2875505D1D12E13F00EBCB9F /* Assets.xcassets in Resources */,
+				28B46FB31D1305C4006E06D3 /* sticker_placeholder.png in Resources */,
+				2875505B1D12E13F00EBCB9F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2875504B1D12E13F00EBCB9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287E71F81D12EA4B00E604F2 /* GIF.swift in Sources */,
+				287550691D12E51600EBCB9F /* SearchViewController.swift in Sources */,
+				287E72041D12FB4400E604F2 /* GIFCache.swift in Sources */,
+				287E71FA1D12EA7700E604F2 /* GiphyImage.swift in Sources */,
+				287E72021D12F87E00E604F2 /* GIFCollectionViewCell.swift in Sources */,
+				287E71FC1D12EA9400E604F2 /* Giphy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		287550521D12E13F00EBCB9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2875504E1D12E13F00EBCB9F /* MessagesExtension */;
+			targetProxy = 287550511D12E13F00EBCB9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		287550591D12E13F00EBCB9F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2875505A1D12E13F00EBCB9F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2875505F1D12E13F00EBCB9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		287550601D12E13F00EBCB9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		287550621D12E13F00EBCB9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		287550631D12E13F00EBCB9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		287550661D12E13F00EBCB9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Giphy/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		287550671D12E13F00EBCB9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Giphy/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		287550421D12E13F00EBCB9F /* Build configuration list for PBXProject "Giphy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2875505F1D12E13F00EBCB9F /* Debug */,
+				287550601D12E13F00EBCB9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		287550611D12E13F00EBCB9F /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287550621D12E13F00EBCB9F /* Debug */,
+				287550631D12E13F00EBCB9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		287550651D12E13F00EBCB9F /* Build configuration list for PBXNativeTarget "Giphy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287550661D12E13F00EBCB9F /* Debug */,
+				287550671D12E13F00EBCB9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2875503F1D12E13F00EBCB9F /* Project object */;
+}
