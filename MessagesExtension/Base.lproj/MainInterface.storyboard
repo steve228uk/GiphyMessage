@@ -19,6 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search Giphy" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-TV-p6Q">
+                                <gestureRecognizers/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Yt3-TV-gcI" id="Mqf-bz-ffF"/>
@@ -78,9 +79,15 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="Img-8G-9UO" id="jVc-9E-Rsk"/>
+                        <outlet property="searchBar" destination="PUq-TV-p6Q" id="MAe-En-Lce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcL-jj-D8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HGG-uB-qf2">
+                    <connections>
+                        <action selector="searchTapped:" destination="Yt3-TV-gcI" id="DGd-Fn-P8t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="49" y="101"/>
         </scene>
