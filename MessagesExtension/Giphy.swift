@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import Messages
 
 class Giphy {
+    
+    static var requests = 0
     
     static let APIKey = "dc6zaTOxFJmzC"
     
@@ -22,7 +25,7 @@ extension Giphy {
     ///
     /// - parameter query:    The query to search
     /// - parameter callback: Called when results are found
-    class func search(query: String, callback: ([GIF]) -> Void) {
+    class func search(query: String, callback: ([MSSticker]) -> Void) {
         
         let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
@@ -32,7 +35,6 @@ extension Giphy {
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-//        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         let task = session.dataTask(with: request) { data, response, error in
             
@@ -57,9 +59,8 @@ extension Giphy {
                     
                     if let images = json["images"] as? [String:AnyObject] {
                         
-                        print(images)
                         
-                        if let image = images["fixed_width_downsampled"] as? [String:AnyObject] {
+                        if let image = images["downsized_medium"] as? [String:AnyObject] {
                             var img = GiphyImage()
                             if let height = image["height"] as? String {
                                 img.height = Int(height)
@@ -76,14 +77,32 @@ extension Giphy {
                             img.url = image["url"] as? String
                             
                             gif.images = [img]
+                            
                         }
                         
                     }
                     
+                    
                     return gif
                 }
                 
-                callback(gifs.filter { $0.images.count > 0 })
+                let filtered = gifs.filter { $0.images.count > 0 }
+                Giphy.requests = filtered.count
+                
+                
+                var stickers = [MSSticker]()
+                
+                for gif in filtered {
+                    let cache = GIFCache.cache
+                    cache.sticker(for: gif) { sticker in
+                        Giphy.requests -= 1
+                        stickers.append(sticker)
+                        if Giphy.requests == 0 {
+                            callback(stickers)
+                        }
+                    }
+                }
+                
                 
             } catch {
                 print(error)

@@ -72,16 +72,9 @@ class GIFCache {
         
         var request = URLRequest(url: gifUrl)
         request.httpMethod = "GET"
-
-        session.dataTask(with: request) { data, response, error in
-            print(error)
-            print(data)
-        }
         
         
         session.dataTask(with: gifUrl) { data, response, error in
-            
-            debugPrint(error)
         
             let operation = BlockOperation {
                 

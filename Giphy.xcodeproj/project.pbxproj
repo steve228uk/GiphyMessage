@@ -185,14 +185,14 @@
 				TargetAttributes = {
 					287550441D12E13F00EBCB9F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B598AEF9ZM;
-						DevelopmentTeamName = "Cocoon Development Ltd";
+						DevelopmentTeam = HHS94TKB2U;
+						DevelopmentTeamName = "Stephen Radford (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					2875504E1D12E13F00EBCB9F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B598AEF9ZM;
-						DevelopmentTeamName = "Cocoon Development Ltd";
+						DevelopmentTeam = HHS94TKB2U;
+						DevelopmentTeamName = "Stephen Radford (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 				};

@@ -9,13 +9,19 @@
 import UIKit
 import Messages
 
-class SearchViewController: MSMessagesAppViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchViewController: MSMessagesAppViewController, MSStickerBrowserViewDataSource, UISearchBarDelegate {
     
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var browserView: MSStickerBrowserView!
     
-    var gifs = [GIF]()
+    var stickers = [MSSticker]()
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        browserView.dataSource = self
+    }
     
     // MARK: - Search
     
@@ -25,48 +31,23 @@ class SearchViewController: MSMessagesAppViewController, UISearchBarDelegate, UI
             return
         }
         
-        Giphy.search(query: text) { gifs in
-            print(gifs)
-            self.gifs = gifs
-            self.collectionView.reloadData()
+        Giphy.search(query: text) { stickers in
+            self.stickers = stickers
+            self.browserView.reloadData()
         }
     }
     
+    // MARK: - MSStickerBrowserViewController
     
-    // MARK: - UICollectionView
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {
+        return stickers.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gifs.count
+    func stickerBrowserView(_ stickerBrowserView: MSStickerBrowserView, stickerAt index: Int) -> MSSticker {
+        let sticker = stickers[index]
+        return sticker
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GIF Cell", for: indexPath) as? GIFCollectionViewCell else { fatalError("Unable to dequeue am GIFCollectionViewCell") }
-        
-        let gif = gifs[indexPath.row]
-        
-        cell.representedGIF = gif
-        
-        // Use a placeholder sticker while we fetch the real one from the cache.
-        let cache = GIFCache.cache
-        cell.stickerView.sticker = cache.placeholderSticker
-        
-        // Fetch the sticker for the ice cream from the cache.
-        cache.sticker(for: gif) { sticker in
-            OperationQueue.main().addOperation {
-                // If the cell is still showing the same ice cream, update its sticker view.
-                guard cell.representedGIF!.id == gif.id else { return }
-                cell.stickerView.sticker = sticker
-            }
-        }
-        
-        return cell
 
-        
-    }
 
 }

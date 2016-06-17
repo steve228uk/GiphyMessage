@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Messages
 
 public struct GIF {
     
@@ -16,5 +17,7 @@ public struct GIF {
     public var bitlyGIFURL: String?
     
     public var images: [GiphyImage] = []
+    
+    weak var sticker: MSSticker?
     
 }
