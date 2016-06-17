@@ -15,3 +15,4 @@ Then run the MessagesExtension target to install.
 
 - Tapping on the search bar doesn't pull up the keyboard. Instead tap the chevron and then search.
 - There is no loading indicator when searching for GIFs.
+- Sometimes the expanded view won't load after searching. Click the chevron to collapse to the compact view and stickers will load.
