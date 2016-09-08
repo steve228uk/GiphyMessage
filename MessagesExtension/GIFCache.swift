@@ -20,8 +20,10 @@ class GIFCache {
     
     // Thanks Apple! This is lifted from their Ice Cream app example
     let placeholderSticker: MSSticker = {
-        let bundle = Bundle.main()
-        guard let placeholderURL = bundle.urlForResource("sticker_placeholder", withExtension: "png") else { fatalError("Unable to find placeholder sticker image") }
+        let bundle = Bundle.main
+        
+        
+        guard let placeholderURL = bundle.url(forResource: "sticker_placeholder", withExtension: "png") else { fatalError("Unable to find placeholder sticker image") }
         
         do {
             let description = NSLocalizedString("An placeholder sticker", comment: "")
@@ -33,12 +35,12 @@ class GIFCache {
     }()
     
     init() {
-        let fileManager = FileManager.default()
+        let fileManager = FileManager.default
         let tempPath = NSTemporaryDirectory()
         let directoryName = UUID().uuidString
         
         do {
-            try cacheURL = URL(fileURLWithPath: tempPath).appendingPathComponent(directoryName)
+            cacheURL = URL(fileURLWithPath: tempPath).appendingPathComponent(directoryName)
             try fileManager.createDirectory(at: cacheURL, withIntermediateDirectories: true, attributes: nil)
         }
         catch {
@@ -47,7 +49,7 @@ class GIFCache {
     }
     
     deinit {
-        let fileManager = FileManager.default()
+        let fileManager = FileManager.default
         do {
             try fileManager.removeItem(at: cacheURL)
         }
@@ -56,17 +58,17 @@ class GIFCache {
         }
     }
     
-    func sticker(for gif: GIF, completion: (sticker: MSSticker) -> Void) {
+    func sticker(for gif: GIF, completion: @escaping (MSSticker) -> Void) {
         
         guard let gifUrlString = gif.images[0].url, let id = gif.id else { return }
         
         let fileName = "GIF-" + id + ".gif"
-        guard let url = try? cacheURL.appendingPathComponent(fileName) else { fatalError("Unable to create sticker URL") }
+        let url = cacheURL.appendingPathComponent(fileName)
         
         
         
         let gifUrl = URL(string: gifUrlString)!
-        let session = URLSession.shared()
+        let session = URLSession.shared
         
         print("DOWNLOADING: \(gifUrl)")
         
@@ -78,8 +80,8 @@ class GIFCache {
         
             let operation = BlockOperation {
                 
-                let fileManager = FileManager.default()
-                guard !fileManager.fileExists(atPath: url.absoluteString!) else { return }
+                let fileManager = FileManager.default
+                guard !fileManager.fileExists(atPath: url.absoluteString) else { return }
                 
                 do {
                     try data?.write(to: url, options: [.atomicWrite])
@@ -92,7 +94,7 @@ class GIFCache {
             operation.completionBlock = {
                 do {
                     let sticker = try MSSticker(contentsOfFileURL: url, localizedDescription: "GIF")
-                    completion(sticker: sticker)
+                    completion(sticker)
                 } catch {
                     print("Failed to write image to cache, error: \(error)")
                 }

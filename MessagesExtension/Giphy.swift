@@ -25,11 +25,11 @@ extension Giphy {
     ///
     /// - parameter query:    The query to search
     /// - parameter callback: Called when results are found
-    class func search(query: String, callback: ([MSSticker]) -> Void) {
+    class func search(query: String, callback: @escaping ([MSSticker]) -> Void) {
         
         let searchQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
-        let session = URLSession.shared()
+        let session = URLSession.shared
         let params = "?q=" + searchQuery! + "&api_key=" + self.APIKey
         let url = URL(string: "http://api.giphy.com/v1/gifs/search" + params)!
         

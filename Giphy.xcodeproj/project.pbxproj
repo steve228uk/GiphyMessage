@@ -185,13 +185,13 @@
 				TargetAttributes = {
 					287550441D12E13F00EBCB9F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HHS94TKB2U;
+						DevelopmentTeam = B598AEF9ZM;
 						DevelopmentTeamName = "Stephen Radford (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
 					2875504E1D12E13F00EBCB9F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HHS94TKB2U;
+						DevelopmentTeam = B598AEF9ZM;
 						DevelopmentTeamName = "Stephen Radford (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
@@ -364,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = B598AEF9ZM;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy.MessagesExtension;
@@ -377,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = B598AEF9ZM;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy.MessagesExtension;
@@ -391,6 +393,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B598AEF9ZM;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +407,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B598AEF9ZM;
 				INFOPLIST_FILE = Giphy/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.wearecocoon.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
